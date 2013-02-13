@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="84">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="include" displayName="Headers" projectFiles="true">
+      <logicalFolder name="controls" displayName="controls" projectFiles="true">
+        <itemPath>include/controls/Axis.h</itemPath>
+        <itemPath>include/controls/Button.h</itemPath>
+        <itemPath>include/controls/Controls.h</itemPath>
+        <itemPath>include/controls/ControlsManager.h</itemPath>
+        <itemPath>include/controls/JoystickAxis.h</itemPath>
+        <itemPath>include/controls/JoystickAxisButton.h</itemPath>
+        <itemPath>include/controls/JoystickButton.h</itemPath>
+        <itemPath>include/controls/JoystickHatAxis.h</itemPath>
+        <itemPath>include/controls/JoystickHatButton.h</itemPath>
+        <itemPath>include/controls/Joysticks.h</itemPath>
+        <itemPath>include/controls/KeyboardKey.h</itemPath>
+        <itemPath>include/controls/MouseButton.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="graphic" displayName="graphic" projectFiles="true">
+        <itemPath>include/graphic/Background.h</itemPath>
+        <itemPath>include/graphic/Draw.h</itemPath>
+        <itemPath>include/graphic/Image.h</itemPath>
+        <itemPath>include/graphic/Screen.h</itemPath>
+        <itemPath>include/graphic/Sprite.h</itemPath>
+        <itemPath>include/graphic/Text.h</itemPath>
+        <itemPath>include/graphic/TileMap.h</itemPath>
+        <itemPath>include/graphic/Tileset.h</itemPath>
+      </logicalFolder>
+      <logicalFolder name="util" displayName="util" projectFiles="true">
+        <itemPath>include/util/BvhTree.h</itemPath>
+        <itemPath>include/util/GLutils.h</itemPath>
+        <itemPath>include/util/MultiList.h</itemPath>
+        <itemPath>include/util/MultiListException.h</itemPath>
+        <itemPath>include/util/Vecteur.h</itemPath>
+        <itemPath>include/util/VecteurNorme.h</itemPath>
+        <itemPath>include/util/math_utils.h</itemPath>
+        <itemPath>include/util/types.h</itemPath>
+      </logicalFolder>
+      <itemPath>include/AppContext.h</itemPath>
+      <itemPath>include/Bonom.h</itemPath>
+      <itemPath>include/ObjectsManager.h</itemPath>
+      <itemPath>include/Particle.h</itemPath>
+      <itemPath>include/ParticleEngine.h</itemPath>
+      <itemPath>include/ParticleType.h</itemPath>
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+      <itemPath>SDL.dll</itemPath>
+      <itemPath>SDL_image.dll</itemPath>
+      <itemPath>explorer.png</itemPath>
+      <itemPath>grid.png</itemPath>
+      <itemPath>libjpeg-8.dll</itemPath>
+      <itemPath>libpng15-15.dll</itemPath>
+      <itemPath>libtiff-5.dll</itemPath>
+      <itemPath>libwebp-2.dll</itemPath>
+      <itemPath>wood.png</itemPath>
+      <itemPath>zlib1.dll</itemPath>
+    </logicalFolder>
+    <logicalFolder name="src" displayName="Sources" projectFiles="true">
+      <logicalFolder name="controls" displayName="controls" projectFiles="true">
+        <itemPath>src/controls/Axis.cpp</itemPath>
+        <itemPath>src/controls/Button.cpp</itemPath>
+        <itemPath>src/controls/Controls.cpp</itemPath>
+        <itemPath>src/controls/ControlsManager.cpp</itemPath>
+        <itemPath>src/controls/JoystickAxis.cpp</itemPath>
+        <itemPath>src/controls/JoystickAxisButton.cpp</itemPath>
+        <itemPath>src/controls/JoystickButton.cpp</itemPath>
+        <itemPath>src/controls/JoystickHatAxis.cpp</itemPath>
+        <itemPath>src/controls/JoystickHatButton.cpp</itemPath>
+        <itemPath>src/controls/Joysticks.cpp</itemPath>
+        <itemPath>src/controls/KeyboardKey.cpp</itemPath>
+        <itemPath>src/controls/MouseButton.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="graphic" displayName="graphic" projectFiles="true">
+        <itemPath>src/graphic/Background.cpp</itemPath>
+        <itemPath>src/graphic/Draw.cpp</itemPath>
+        <itemPath>src/graphic/Image.cpp</itemPath>
+        <itemPath>src/graphic/Screen.cpp</itemPath>
+        <itemPath>src/graphic/Sprite.cpp</itemPath>
+        <itemPath>src/graphic/Text.cpp</itemPath>
+        <itemPath>src/graphic/TileMap.cpp</itemPath>
+        <itemPath>src/graphic/Tileset.cpp</itemPath>
+      </logicalFolder>
+      <logicalFolder name="util" displayName="util" projectFiles="true">
+        <itemPath>src/util/GLutils.cpp</itemPath>
+        <itemPath>src/util/Vecteur.cpp</itemPath>
+        <itemPath>src/util/VecteurNorme.cpp</itemPath>
+      </logicalFolder>
+      <itemPath>src/AppContext.cpp</itemPath>
+      <itemPath>src/Bonom.cpp</itemPath>
+      <itemPath>src/ObjectsManager.cpp</itemPath>
+      <itemPath>src/Particle.cpp</itemPath>
+      <itemPath>src/ParticleEngine.cpp</itemPath>
+      <itemPath>src/ParticleType.cpp</itemPath>
+      <itemPath>src/main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+      </toolsSet>
+      <compileType>
+        <ccTool>
+          <incDir>
+            <pElem>include</pElem>
+            <pElem>C:/libs/SDL-1.2.9/include</pElem>
+            <pElem>C:/libs/FTGL/include</pElem>
+            <pElem>C:/Program Files (x86)/GnuWin32/include</pElem>
+          </incDir>
+          <commandLine>-Wextra -Weffc++ -std=c++0x</commandLine>
+          <warningLevel>2</warningLevel>
+        </ccTool>
+        <linkerTool>
+          <output>${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/gwift</output>
+          <linkerAddLib>
+            <pElem>C:/libs/SDL-1.2.9/lib</pElem>
+            <pElem>C:/libs/FTGL/lib</pElem>
+            <pElem>C:/MinGW/lib</pElem>
+          </linkerAddLib>
+          <linkerLibItems>
+            <linkerLibLibItem>mingw32</linkerLibLibItem>
+            <linkerLibLibItem>SDL</linkerLibLibItem>
+            <linkerLibLibItem>SDLmain</linkerLibLibItem>
+            <linkerLibLibItem>SDL.dll</linkerLibLibItem>
+            <linkerLibLibItem>SDL_image</linkerLibLibItem>
+            <linkerLibLibItem>ftgl.dll</linkerLibLibItem>
+            <linkerLibLibItem>glew32</linkerLibLibItem>
+            <linkerLibFileItem>C:/MinGW/lib/libglu32.a</linkerLibFileItem>
+            <linkerLibLibItem>opengl32</linkerLibLibItem>
+          </linkerLibItems>
+        </linkerTool>
+      </compileType>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <remote-sources-mode>LOCAL_SOURCES</remote-sources-mode>
+        <compilerSet>default</compilerSet>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+    </conf>
+  </confs>
+</configurationDescriptor>

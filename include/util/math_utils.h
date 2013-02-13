@@ -1,0 +1,11 @@
+#ifndef MATH_UTILS_H
+#define MATH_UTILS_H
+
+#define SIGN(X) ((X)==0?0:(X)>0?1:-1)
+
+#define ABS(X) ((X)<0?-(X):(X))
+
+#define DEG_TO_RAD 0.01745329251994329576923690768489
+#define RAD_TO_DEG 57.295779513082320876798154814105
+
+#endif // MATH_UTILS_H
