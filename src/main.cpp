@@ -9,7 +9,7 @@
 
 int main(int argc, char **argv)
 {
-	std::cout << "KOUKOU LEZAMI\n";
+	std::cout << "KOUKOU LEZAMI .sdkjb.skvbzx v.zbv/asd vbS\n";
 
 	AppContext::init();
 
