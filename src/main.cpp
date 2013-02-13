@@ -9,7 +9,7 @@
 
 int main(int argc, char **argv)
 {
-	std::cout << "KOUKOU\n";
+	std::cout << "KOUKOU LEZAMI\n";
 
 	AppContext::init();
 
