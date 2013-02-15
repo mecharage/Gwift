@@ -5,14 +5,22 @@
 
 class Mask
 {
-	Mask* collide(Mask const* other);
+	virtual Mask* collide(Mask const* other) = 0;
+	virtual Mask& include(Mask const& other) = 0;
+	virtual float costToInclude(Mask const& other) = 0;
 };
+
+	/************************************
+	 * Déclaration de la classe BvhTree *
+	 ************************************/
 
 template <typename T_bounds, typename T_ref>
 class BvhTree
 {
 public:
 	BvhTree();
+	virtual ~BvhTree();
+	Leaf* include(Mask const& mask);
 
 private:
 	BaseNode *m_head;
@@ -46,13 +54,15 @@ public:
 	 *********************************/
 
 	// Noeud d'un BVHT pointant sur deux descendants
+
 	class Node : public BaseNode
 	{
 	public:
 		virtual ~Node();
 
 	private:
-		Leaf();
+		Node();
+		Node(Node *parent, T_bounds const& bounds);
 
 		bool isLeaf() const
 		{
@@ -67,6 +77,7 @@ public:
 	 *********************************/
 
 	// Feuille d'un BVHT pointant sur un objet
+
 	class Leaf : public BaseNode
 	{
 	public:
@@ -78,6 +89,7 @@ public:
 
 	private:
 		Leaf();
+		Leaf(Node *parent, T_bounds const& bounds);
 
 		void addSibling(BaseNode &other);
 
@@ -87,8 +99,11 @@ public:
 		}
 
 		T_ref *m_ref;
+		bool m_ownBounds;
 	};
 };
+
+#include "BvhTree.tpp"
 
 #endif	/* BVHTREE_H */
 
