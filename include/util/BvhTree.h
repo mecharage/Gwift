@@ -41,6 +41,7 @@ private:
 		BaseNode(Node *parent, T_bounds const& bounds);
 
 		virtual bool isLeaf() const = 0;
+		void fitChildren();
 
 		Node *m_parent;
 		T_bounds *m_bounds;
@@ -85,6 +86,7 @@ public:
 
 		void setBounds(T_bounds const& bounds);
 		void bindBounds(T_bounds *bounds);
+		void unbindBounds();
 		void detach();
 
 	private:
