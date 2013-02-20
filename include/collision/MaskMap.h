@@ -9,9 +9,7 @@ public:
     MaskMap();
 	virtual ~MaskMap();
 
-
-
-	virtual MaskAABB aabb() const = 0;
+	virtual MaskAABB aabb() const;
 
 	virtual bool collide(const Mask &m) const {
 		return m._collide_(*this);

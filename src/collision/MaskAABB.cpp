@@ -6,6 +6,18 @@ MaskAABB::MaskAABB(float width, float height) : width(width), height(height){
 MaskAABB::~MaskAABB(){
 }
 
+//TODO
+MaskAABB& MaskAABB::include(MaskAABB const& other)
+{
+	return *this;
+}
+
+//TODO
+float MaskAABB::costToInclude(MaskAABB const& other)
+{
+	return 1.0;
+}
+
 //Cette méthode est-elle vraiment juste ?!//
 bool MaskAABB::_collide_(const MaskAABB& box2) const{
 	MaskAABB const& box1 = *this;
@@ -174,4 +186,10 @@ bool MaskAABB::_collide_(const MaskSegment& seg) const{
 
 bool MaskAABB::_collide_(const MaskComposite& m) const{
 	return m._collide_(*this);
+}
+
+//TODO
+bool MaskAABB::_collide_(const MaskMap& map) const
+{
+	return false;
 }

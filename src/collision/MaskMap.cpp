@@ -2,7 +2,17 @@
 
 MaskMap::MaskMap() { }
 
+MaskMap::~MaskMap()
+{
+	
+}
+
 // TODO actual functions
+
+MaskAABB MaskMap::aabb() const
+{
+	return MaskAABB();
+}
 
 bool MaskMap::_collide_(const MaskAABB& box) const
 {

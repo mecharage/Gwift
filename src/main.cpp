@@ -6,6 +6,7 @@
 #include "util/MultiList.h"
 
 #include "AppContext.h"
+#include "collision/MaskAABB.h"
 #include "util/BvhTree.h"
 /*
 int main(int argc, char **argv)
@@ -21,7 +22,7 @@ int main(int argc, char **argv)
 */
 int main(int argc, char **argv)
 {
-	BvhTree<BvhtBounds, int*> bvht();
+	BvhTree bvht();
 
 	return 0;
 }

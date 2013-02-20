@@ -1,13 +1,14 @@
 #ifndef MASKAABB_H
 #define MASKAABB_H
 
+#include "collision/HasAABB.h"
 #include "collision/Mask.h"
 
-class MaskAABB : public Mask
+class MaskAABB : public Mask, public HasAABB
 {
 
 public:
-	MaskAABB(float width, float height);
+	MaskAABB(float width = .0, float height = .0);
 	virtual ~MaskAABB();
 
 	float width, height;
