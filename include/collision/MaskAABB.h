@@ -19,6 +19,9 @@ public:
 	Point pointBG() const {return Mask::pos+Point(-width* .5, -height * .5);}
 	Point pointBD() const {return Mask::pos+Point(width* .5, -height * .5);}
 
+	virtual MaskAABB& include(MaskAABB const& other);
+	virtual float costToInclude(MaskAABB const& other);
+
 	virtual bool collide(const Mask &m) const {
 		return m._collide_(*this);
 	}
