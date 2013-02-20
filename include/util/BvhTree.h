@@ -1,29 +1,24 @@
 #ifndef BVHTREE_H
 #define	BVHTREE_H
 
-//TEMP
+#include "collision/Mask.h"
 
-class Mask
-{
-	virtual Mask* collide(Mask const* other) = 0;
-	virtual Mask& include(Mask const& other) = 0;
-	virtual float costToInclude(Mask const& other) = 0;
-};
+/************************************
+ * Déclaration de la classe BvhTree *
+ ************************************/
 
-	/************************************
-	 * Déclaration de la classe BvhTree *
-	 ************************************/
-
-template <typename T_bounds, typename T_ref>
+template <typename T_ref>
 class BvhTree
 {
 public:
 	BvhTree();
 	virtual ~BvhTree();
-	Leaf* include(Mask const& mask);
+
+	// Ajoute le mask à l'abre et retourne la feuille le contenant.
+	Leaf* include(Mask const& bounds);
 
 private:
-	BaseNode *m_head;
+	BaseNode m_head;
 
 	/*************************************
 	 * Déclaration de la classe BaseNode *
@@ -38,13 +33,18 @@ private:
 
 	private:
 		BaseNode();
-		BaseNode(Node *parent, T_bounds const& bounds);
+		BaseNode(Node *parent, MaskAABB const& bounds);
 
-		virtual bool isLeaf() const = 0;
-		void fitChildren();
+		virtual bool _isLeaf() const = 0;
+
+		// Retourne le jumeau du noeud, ou NULL.
+		BaseNode* _getSibling();
+
+		// Retourne le pointeur du parent référençant le noeud, ou NULL.
+		BaseNode** _parentPointer();
 
 		Node *m_parent;
-		T_bounds *m_bounds;
+		MaskAABB *m_bounds;
 	};
 
 
@@ -58,14 +58,19 @@ public:
 
 	class Node : public BaseNode
 	{
+		friend class Leaf;
+
 	public:
 		virtual ~Node();
 
 	private:
 		Node();
-		Node(Node *parent, T_bounds const& bounds);
+		Node(Node *parent, MaskAABB const& bounds);
 
-		bool isLeaf() const
+		// Ajuste le BV du noeud à ceux de ses enfants.
+		void _fitChildren();
+
+		bool _isLeaf() const
 		{
 			return false;
 		}
@@ -84,18 +89,17 @@ public:
 	public:
 		virtual ~Leaf();
 
-		void setBounds(T_bounds const& bounds);
-		void bindBounds(T_bounds *bounds);
+		void setBounds(MaskAABB const& bounds);
+		void bindBounds(MaskAABB *bounds);
 		void unbindBounds();
-		void detach();
 
 	private:
 		Leaf();
-		Leaf(Node *parent, T_bounds const& bounds);
+		Leaf(Node *parent, MaskAABB const& bounds);
 
-		void addSibling(BaseNode &other);
+		void _addSibling(BaseNode &other);
 
-		bool isLeaf() const
+		bool _isLeaf() const
 		{
 			return true;
 		}
